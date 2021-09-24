@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/pavelzagorodnyuk/linkservice/internal/api";
+
+package api;
+
+service LinkService {
+    rpc Create (URL) returns (Link) {}
+    rpc Get (Link) returns (URL) {}
+}
+
+message URL {
+    string url = 1;
+}
+
+message Link {
+    string link = 1;
+}
